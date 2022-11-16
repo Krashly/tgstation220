@@ -136,7 +136,7 @@ obj/item/clothing/under/scp/chaos
 
 /obj/item/clothing/head/scp/can_open/AltClick(mob/user)
 	..()
-	if(user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY, FALSE, !iscyborg(user)))
+	if(user.canUseTopic(src, be_close = TRUE, no_dexterity = TRUE, no_tk = FALSE, need_hands = !iscyborg(user)))
 		closehelmet(user)
 
 
