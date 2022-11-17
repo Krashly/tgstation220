@@ -39,6 +39,26 @@
 		parent_node = null
 	return ..()
 
+/obj/structure/corruption/run_atom_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
+	if(damage_flag == MELEE)
+		switch(damage_type)
+			if(BRUTE)
+				damage_amount *= 0.25
+			if(BURN)
+				damage_amount *= 2
+	. = ..()
+
+/obj/structure/corruption/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
+	switch(damage_type)
+		if(BRUTE)
+			if(damage_amount)
+				playsound(loc, 'sound/effects/attackblob.ogg', 100, TRUE)
+			else
+				playsound(src, 'sound/weapons/tap.ogg', 50, TRUE)
+		if(BURN)
+			if(damage_amount)
+				playsound(loc, 'sound/items/welder.ogg', 100, TRUE)
+
 /obj/structure/corruption/update_icon()
 	icon_state = "corruption-[rand(1,3)]"
 
@@ -123,6 +143,7 @@
 	desc = "A bunch of flesh and blood merged into one pile. It stinks.."
 	icon = 'icons/necromorph/harvester.dmi'
 	icon_state = "harvester"
+	max_integrity = 70
 	pixel_x = -8
 	base_pixel_x = -8
 

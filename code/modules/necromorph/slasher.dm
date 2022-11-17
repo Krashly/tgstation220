@@ -10,6 +10,8 @@
 	melee_damage_lower = 30
 	melee_damage_upper = 30
 	pressure_resistance = 200
+	sharpness = 1
+	healable = 1
 	pixel_x = -8
 	base_pixel_x = -8
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -136,3 +138,21 @@
 			continue
 		return A
 	return FALSE
+
+/mob/living/simple_animal/necromorph/attack_animal(mob/living/simple_animal/user, list/modifiers, mob/target)
+	if(target.faction == ROLE_NECROMORPH)
+		var/mob/living/simple_animal/necromorph = user
+		if(src != user)
+			visible_message(user, span_info("You can't hit him!"))
+		else
+			visible_message(user, span_info(" You can't hit yourself!"))
+	else if(src != user)
+		return ..()
+
+/mob/living/simple_animal/necromorph/proc/healing(mob/living/simple_animal/user)
+	if(user.faction == ROLE_NECROMORPH)
+		var/mob/living/simple_animal/necromorph/A = user
+		for(locate(/obj/structure/corruption) in A.loc)
+			A.adjustHealth(-10)
+		return
+	return..()

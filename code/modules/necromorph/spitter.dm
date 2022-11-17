@@ -8,6 +8,7 @@
 	health = 150
 	maxHealth = 150
 	pressure_resistance = 200
+	sharpness = 1
 	pixel_x = -16
 	base_pixel_x = -16
 	pixel_y = -16
