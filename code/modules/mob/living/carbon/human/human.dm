@@ -1148,6 +1148,9 @@
 /mob/living/carbon/human/species/snail
 	race = /datum/species/snail
 
+/mob/living/carbon/human/species/vulpkanin
+	race = /datum/species/vulpkanin
+
 /mob/living/carbon/human/species/vampire
 	race = /datum/species/vampire
 
