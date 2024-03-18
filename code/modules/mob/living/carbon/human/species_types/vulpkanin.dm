@@ -175,21 +175,4 @@ var/list/vulpkanin_snouts_list = list(
 
 /obj/item/organ/external/snout/vulpkanin/flcanid
 	feature_key = "snout_flcanid"
-<<<<<<< HEAD
-
-////
-
-/datum/sprite_accessory/snouts/vulpkanin/wolf
-	name = "Wolf"
-	icon_state = "wolf"
-
-/datum/sprite_accessory/snouts/vulpkanin/fsharp
-	name = "Fsharp"
-	icon_state = "fsharp"
-
-/datum/sprite_accessory/snouts/vulpkanin/flcanid
-	name = "Flcanid"
-	icon_state = "flcanid"
-=======
 	preference = "feature_flcanid_snout"
->>>>>>> parent of 6d19d509444 (Revert "Revert "Наработки"")
